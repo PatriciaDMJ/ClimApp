@@ -6,6 +6,7 @@ let dayIconsByDescription = {
 "broken clouds":"wi wi-cloudy",
 "shower rain":"wi wi-day-showers",
 "light rain": "wi wi-day-showers",
+"moderate rain": "wi wi-rain",
 "rain":"wi wi-rain",
 "thunderstorm":"wi wi-thunderstorm",
 "snow":" wi wi-snowflake-cold",
@@ -21,6 +22,7 @@ let nightIconsByDescription = {
     "shower rain":"wi wi-night-alt-showers",
     "light rain": "wi wi-night-alt-showers",
     "rain":"wi wi-rain",
+    "moderate rain": "wi wi-rain",
     "thunderstorm":"wi wi-thunderstorm",
     "snow":" wi wi-snowflake-cold",
     "mist":"wi wi-fog"
@@ -39,8 +41,14 @@ requestNextWeather(searchCity.value);
 
 }
 
-function changeBackground (){
-    let date = new Date();
+function changeBackground (newDate){
+    let date;   
+    if(newDate){
+        date = newDate;
+    }else{
+        date = new Date();
+    }
+    
     let dateString = date.toLocaleString("es-ES");
     document.getElementById("hour-date").innerText = dateString.toString();
     let hour = date.getHours();
@@ -56,7 +64,7 @@ function changeBackground (){
 }
 
 function requestCurrentWeather(city){
-    let request =  axios.get("http://api.openweathermap.org/data/2.5/weather?q="+city+"&units=metric&appid=8d781767154f107e17200773567bfdc0");    
+    let request =  axios.get("https://api.openweathermap.org/data/2.5/weather?q="+city+"&units=metric&appid=8d781767154f107e17200773567bfdc0");    
     
     function onSuccessRequestCurrentWeather(response){
         console.log(response);     
@@ -77,6 +85,15 @@ function requestCurrentWeather(city){
         let descriptionSymbol = document.getElementById("description-symbol");
         descriptionSymbol.innerText= response.data.weather[0].description;
 
+        let currentDay = new Date();
+        let localTime = currentDay.getTime();
+        let localOffset = currentDay.getTimezoneOffset() * 60000;
+        let utc = localTime + localOffset;
+        let timezone = response.data.timezone;
+        let newCountry = utc + (1000 * timezone);
+        let contryDate = new Date(newCountry);
+        
+        changeBackground(contryDate);
         
         if (isDaytime){
             elementSymbol.className = dayIconsByDescription[response.data.weather[0].description];
@@ -94,7 +111,7 @@ function requestCurrentWeather(city){
 }
 
 function requestNextWeather(city){
-    let request = axios.get("http://api.openweathermap.org/data/2.5/forecast?q="+city+"&units=metric&appid=8d781767154f107e17200773567bfdc0");
+    let request = axios.get("https://api.openweathermap.org/data/2.5/forecast?q="+city+"&units=metric&appid=8d781767154f107e17200773567bfdc0");
 
     function onSuccessRequestNextWeather(response){
         console.log(response); 
