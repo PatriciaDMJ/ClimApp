@@ -56,10 +56,10 @@ function changeBackground (newDate){
     
     if(hour >= 20 || hour <= 7){
         isDaytime = false;
-        bgImage[0].style.backgroundImage="url('/CSS/photos/night.jpg')";
+        bgImage[0].style.backgroundImage="url('CSS/photos/night.jpg')";
     }else{
         isDaytime =true;
-        bgImage[0].style.backgroundImage="url('/CSS/photos/day.jpg')";
+        bgImage[0].style.backgroundImage="url('CSS/photos/day.jpg')";
     }
 }
 
