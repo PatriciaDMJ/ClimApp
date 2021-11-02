@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="CSS/styles.css">
+        <link rel="stylesheet" href="CSS/weather-icons/css/weather-icons.css">
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="JS/main-script.js"></script>       
+    </head>
+    <body>
+        <div class="bg-image"></div>
+        <div class="center-items">
+        <div id="container" class="container center-items">
+            <div id="search-container" class="search-container center-items">
+                <div id="city" class="city">Madrid, España</div>
+                <div id="hour-date" class="hour-date">30/10/2021 - 21:59</div>
+            </div>
+            <div id="data-container" class="data-container">
+                <div class="center-items">
+                    <div><i id="symbol" class="symbol"></i></div>
+                    <div id="description-symbol" class="description-symbol"></div>
+                </div>
+
+                <table id="table">
+                    <tr class="center-table">
+                      <th id="temperature" class="temperature">15</th>
+                      <th colspan="2" class="wi wi-celsius symbol-degree"></th>
+                    </tr>
+                    <tr class="center-table">
+                        <th class="letter">Min</th>
+                        <th class="letter">Max</th>
+                    </tr>
+                    <tr class="center-table">
+                        <th id="min" class="number">15º</th>
+                        <th id="max" class="number">45º</th>
+                    </tr>
+                    <tr class="center-table">
+                        <th class="letter">Sensación térmica</th>
+                    </tr>
+                    <tr class="center-table">
+                        <th class="wi wi-thermometer symbol-humudity"></th>
+                        <th id="feels-like" class="number">35º</th>
+                    </tr>
+                    <tr class="center-table">
+                        <th class="letter">Humedad</th>
+                    </tr>
+                    <tr class="center-table">
+                        <th class="wi wi-raindrop symbol-humudity" colspan="2"></th>
+                        <th id="humidity" class="number">35%</th>
+                     </tr>
+                </table>
+            </div>
+            <div id="next-container" class="next-container center-table">
+                <div id="tomorrow" class="center-items description-symbol">Mañana
+                    <div id="symbol-tomorrow" class="symbol"></div>
+                    <div id="temperture-tomorrow" class="number"></div>
+                </div>
+                <div id="after-tomorrow" class="center-items description-symbol">Pasado
+                    <div id="symbol-after-tomorrow" class="symbol"></div>
+                    <div id="temperture-after-tomorrow" class="number"></div>
+                </div>
+                <div id="other-tomorrow" class="center-items description-symbol">Al otro
+                    <div id="symbol-other-tomorrow" class="symbol"></div>
+                    <div id="temperture-other-tomorrow" class="number"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
