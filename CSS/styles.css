@@ -17,6 +17,13 @@ body{
     transform: scale(1.1);
 }
 
+.boton{
+    background-color: transparent;
+    color: white;
+    font-size: 15px;
+    font-weight: 300;
+    border: transparent;
+}
 .center-items{
     display: flex;
     flex-direction: column;
@@ -33,6 +40,7 @@ body{
 
 .city{
     font-size: 60px;
+    text-transform: capitalize;
 }
 .container{
     width: 70%;
@@ -70,6 +78,7 @@ body{
 .letter{
     font-size: 15px;
     font-weight: 300;
+    text-transform: capitalize;
 }
 
 .next-container{
@@ -87,6 +96,7 @@ body{
     height: 100px;
     position: relative;
     font-weight: 100;
+    margin-top: 8%;
 }
 
 .symbol{
@@ -106,7 +116,11 @@ body{
     font-size: 80px;
 }
 
+#search-bar{
+    margin-top: 15px;
+}
 #symbol{
-    font-size: 150px;
+    font-size: 100px;
     margin-left: 10%;
+    margin-bottom: 10%;
 }

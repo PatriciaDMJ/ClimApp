@@ -2,6 +2,7 @@ let dayIconsByDescription = {
 "clear sky": "wi wi-day-sunny",
 "few clouds": "wi wi-day-cloudy",
 "scattered clouds":"wi wi-cloud",
+"overcast clouds":"wi wi-cloud",
 "broken clouds":"wi wi-cloudy",
 "shower rain":"wi wi-day-showers",
 "light rain": "wi wi-day-showers",
@@ -15,6 +16,7 @@ let nightIconsByDescription = {
     "clear sky": "wi wi-night-clear",
     "few clouds": "wi wi-night-alt-cloudy",
     "scattered clouds":"wi wi-cloud",
+    "overcast clouds":"wi wi-cloud",
     "broken clouds":"wi wi-cloudy",
     "shower rain":"wi wi-night-alt-showers",
     "light rain": "wi wi-night-alt-showers",
@@ -25,6 +27,17 @@ let nightIconsByDescription = {
 };
 
 let isDaytime=true;
+
+function changeCity(){
+let searchCity = document.getElementById("text-city");
+let finallyCity = document.getElementById("city");
+
+finallyCity.innerHTML = searchCity.value;
+
+requestCurrentWeather(searchCity.value);
+requestNextWeather(searchCity.value);
+
+}
 
 function changeBackground (){
     let date = new Date();

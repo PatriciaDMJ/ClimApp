@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>ClimApp</title>
         <link rel="stylesheet" href="CSS/styles.css">
         <link rel="stylesheet" href="CSS/weather-icons/css/weather-icons.css">
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -10,16 +11,22 @@
         <div class="bg-image"></div>
         <div class="center-items">
         <div id="container" class="container center-items">
-            <div id="search-container" class="search-container center-items">
-                <div id="city" class="city">Madrid, España</div>
-                <div id="hour-date" class="hour-date">30/10/2021 - 21:59</div>
+            
+            <div id="search-bar">
+                <input type="text" id="text-city" placeholder = "Madrid" class="letter boton" value="" > 
+                <button type="button" id ="city-button" class="boton" onclick="changeCity()">Búsqueda
             </div>
+
+            <div id="search-container" class="search-container center-items">
+                <div id="city" class="city">Madrid</div>
+                <div id="hour-date" class="hour-date"></div>
+            </div>
+            
             <div id="data-container" class="data-container">
                 <div class="center-items">
                     <div><i id="symbol" class="symbol"></i></div>
                     <div id="description-symbol" class="description-symbol"></div>
                 </div>
-
                 <table id="table">
                     <tr class="center-table">
                       <th id="temperature" class="temperature">15</th>
@@ -49,6 +56,7 @@
                      </tr>
                 </table>
             </div>
+            
             <div id="next-container" class="next-container center-table">
                 <div id="tomorrow" class="center-items description-symbol">Mañana
                     <div id="symbol-tomorrow" class="symbol"></div>
