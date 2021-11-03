@@ -4,12 +4,12 @@ Este proyecto es una aplicación del tiempo, en el que se especifica la previsi�
 
 ## Pre-requisitos
 
-Soportado: Firefox - Chrome - Edge
+Soportado: Firefox - Chrome - Edge - Safari
 
 ## Introducción
 Aplicación Web desarrollada en Javascript nativo, añadiendo estilo con HTML y CSS.
 
-### Funcionalidades
+## Funcionalidades
 
 En primera instancia tenemos un buscador (cuadro de texto + un botón de búsqueda), que nos permite buscar el lugar que queremos consultar.
 Por defecto viene la ciudad de Madrid y siempre nos pondrá la primera letra con mayúscula.
