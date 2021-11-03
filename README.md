@@ -52,7 +52,7 @@ Todos los datos se actualizan, incluyendo el símbolo correspondiente a la previ
  La aplicación la he publicado en internet utilizando GitHub Page: https://patriciadmj.github.io/ClimApp/
  
  ## Dependencias
- https://erikflowers.github.io/weather-icons/
+ https://erikflowers.github.io/weather-icons/ <br>
  https://openweathermap.org/
  
  ## Autor
